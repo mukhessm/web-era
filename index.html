@@ -728,7 +728,7 @@
 
 .roadmap-image {
             width: 100%;
-            max-width: none;
+            max-width: 100%;
             margin: 0;
             background: #FFFFFF;
             border: 1px solid var(--border);
@@ -1017,13 +1017,17 @@
 
 
 
+
         /* =====================================================
            RESPONSIVE
         ===================================================== */
 
+        /* ---------- Large Tablet / Small Laptop ---------- */
+
         @media (max-width: 1100px) {
+
             .hero-grid {
-                grid-template-columns: 1fr 0.9fr;
+                grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
                 gap: 35px;
             }
 
@@ -1043,7 +1047,11 @@
             }
         }
 
+
+        /* ---------- Tablet ---------- */
+
         @media (max-width: 900px) {
+
             .navbar {
                 height: 72px;
             }
@@ -1063,7 +1071,10 @@
 
             .brand-subtitle {
                 font-size: 8px;
+                letter-spacing: 1px;
             }
+
+            /* HERO */
 
             .hero {
                 min-height: auto;
@@ -1071,39 +1082,57 @@
             }
 
             .hero-grid {
-                grid-template-columns: 1fr;
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
                 gap: 45px;
+                width: 100%;
+                min-width: 0;
+            }
+
+            .hero-grid > * {
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
             }
 
             .hero h1 {
+                width: 100%;
                 max-width: 760px;
                 font-size: clamp(46px, 8vw, 68px);
             }
 
             .hero-description {
+                width: 100%;
                 max-width: 720px;
             }
 
             .hero-visual {
-                min-height: auto;
                 width: 100%;
+                min-height: auto;
+                min-width: 0;
+                overflow: hidden;
             }
 
             .leader-profile {
                 width: min(100%, 500px);
+                min-width: 0;
                 margin: 0 auto;
             }
 
             .leader-photo {
                 width: 100%;
                 height: auto;
-                max-height: none;
+                max-width: 100%;
             }
 
+            /* ABOUT */
+
             .about-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
                 gap: 35px;
             }
+
+            /* MEMBERS */
 
             .team-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1113,9 +1142,14 @@
                 height: 340px;
             }
 
+            /* ROADMAP */
+
             .roadmap-image {
                 width: 100%;
+                max-width: 100%;
             }
+
+            /* CTA */
 
             .cta-inner {
                 flex-direction: column;
@@ -1123,9 +1157,14 @@
             }
         }
 
+
+        /* ---------- Mobile ---------- */
+
         @media (max-width: 600px) {
+
             .container {
                 width: calc(100% - 28px);
+                max-width: calc(100% - 28px);
             }
 
             .navbar {
@@ -1135,6 +1174,7 @@
             .brand {
                 gap: 9px;
                 min-width: 0;
+                max-width: 100%;
             }
 
             .brand-logo {
@@ -1151,59 +1191,117 @@
 
             .brand-subtitle {
                 font-size: 6.5px;
+                letter-spacing: .8px;
                 white-space: nowrap;
             }
 
+            /* HERO */
+
             .hero {
+                width: 100%;
+                max-width: 100%;
+                min-height: auto;
                 padding: 105px 0 65px;
+                overflow: hidden;
+            }
+
+            .hero-grid {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                grid-template-columns: minmax(0, 1fr);
+                gap: 35px;
+            }
+
+            .hero-grid > div {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
             }
 
             .hero-label {
                 font-size: 8.5px;
                 letter-spacing: 1.15px;
+                gap: 7px;
+                margin-bottom: 16px;
                 flex-wrap: wrap;
             }
 
+            .hero-label::before {
+                width: 24px;
+                flex: 0 0 24px;
+            }
+
             .hero h1 {
-                font-size: clamp(40px, 12vw, 54px);
-                line-height: 1;
-                letter-spacing: -2.8px;
+                width: 100%;
+                max-width: 100%;
+                font-size: clamp(38px, 11.5vw, 52px);
+                line-height: .98;
+                letter-spacing: -2.2px;
+                overflow-wrap: normal;
+                word-break: normal;
             }
 
             .hero-description {
+                width: 100%;
+                max-width: 100%;
                 font-size: 14px;
                 line-height: 1.65;
                 margin: 22px 0;
+                overflow-wrap: break-word;
+            }
+
+            .institution {
+                width: 100%;
+                max-width: 100%;
+                padding-left: 11px;
+                margin-bottom: 25px;
             }
 
             .institution span {
+                display: block;
+                width: 100%;
+                max-width: 100%;
                 font-size: 11px;
+                line-height: 1.55;
+                white-space: normal;
+                overflow-wrap: break-word;
             }
 
             .hero-buttons {
                 width: 100%;
+                max-width: 100%;
                 flex-direction: column;
                 gap: 10px;
             }
 
             .hero-buttons .btn {
                 width: 100%;
+                max-width: 100%;
             }
+
+            /* HERO LEADER PHOTO */
 
             .hero-visual {
                 width: 100%;
+                max-width: 100%;
+                min-width: 0;
                 min-height: auto;
+                overflow: hidden;
             }
 
             .leader-profile {
                 width: 100%;
                 max-width: 390px;
+                min-width: 0;
                 margin: 0 auto;
             }
 
             .leader-photo {
                 width: 100%;
+                max-width: 100%;
                 height: auto;
+                object-fit: contain;
             }
 
             .leader-caption {
@@ -1213,11 +1311,18 @@
 
             .leader-role {
                 font-size: 8px;
+                letter-spacing: 1.4px;
             }
 
             .leader-caption h3 {
                 font-size: 16px;
             }
+
+            .leader-caption p {
+                font-size: 11px;
+            }
+
+            /* SECTIONS */
 
             .about,
             .team,
@@ -1227,6 +1332,11 @@
 
             .about-grid {
                 gap: 28px;
+            }
+
+            .section-label {
+                font-size: 9px;
+                letter-spacing: 1.7px;
             }
 
             .about h2,
@@ -1242,30 +1352,62 @@
                 line-height: 1.7;
             }
 
+            /* MEMBERS */
+
             .team-heading {
                 margin-bottom: 30px;
             }
 
             .team-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: minmax(0, 1fr);
                 gap: 15px;
+            }
+
+            .member-card {
+                width: 100%;
+                min-width: 0;
             }
 
             .member-photo {
                 height: 350px;
             }
 
+            .member-info {
+                padding: 18px 18px 21px;
+            }
+
+            .member-info h3 {
+                font-size: 15px;
+            }
+
+            /* ROADMAP */
+
+            .research-roadmap .section-heading {
+                margin-bottom: 28px;
+            }
+
+            .research-roadmap .section-heading p {
+                font-size: 13px;
+                line-height: 1.65;
+            }
+
             .roadmap-image {
                 width: 100%;
+                max-width: 100%;
                 padding: 4px;
                 border-radius: 14px;
+                overflow: hidden;
             }
 
             .roadmap-image img {
                 width: 100%;
+                max-width: 100%;
                 height: auto;
+                display: block;
                 border-radius: 10px;
             }
+
+            /* CTA */
 
             .cta {
                 padding: 65px 0;
@@ -1275,27 +1417,53 @@
                 font-size: clamp(30px, 9vw, 40px);
             }
 
+            .cta p {
+                font-size: 13px;
+            }
+
             .cta .btn {
                 width: 100%;
+                max-width: 100%;
             }
+
+            /* FOOTER */
 
             .footer-inner {
                 display: block;
                 text-align: center;
             }
+
+            footer small {
+                display: block;
+                line-height: 1.6;
+            }
         }
 
+
+        /* ---------- Very Small Phones ---------- */
+
         @media (max-width: 380px) {
+
             .container {
                 width: calc(100% - 24px);
+                max-width: calc(100% - 24px);
             }
 
             .brand-title {
                 font-size: 12px;
             }
 
+            .brand-subtitle {
+                font-size: 6px;
+            }
+
             .hero h1 {
-                font-size: 39px;
+                font-size: 38px;
+                letter-spacing: -1.8px;
+            }
+
+            .hero-description {
+                font-size: 13.5px;
             }
 
             .leader-profile {
@@ -1305,6 +1473,28 @@
             .member-photo {
                 height: 310px;
             }
+        }
+
+
+        /* ---------- Global Mobile Overflow Protection ---------- */
+
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .hero-grid,
+        .hero-grid > *,
+        .about-grid,
+        .about-grid > *,
+        .team-grid,
+        .member-card,
+        .hero-visual,
+        .leader-profile,
+        .roadmap-image {
+            min-width: 0;
         }
 
     </style>
