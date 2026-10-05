@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,1976 +9,468 @@
     <title>AgriField Technology | Universitas Udayana</title>
 
     <meta name="description"
-          content="AgriField Technology Research Group - Energy and Agricultural Machinery Engineering, Agricultural and Biosystems Engineering, Universitas Udayana.">
+        content="AgriField Technology Research Group - Energy and Agricultural Machinery Engineering, Agricultural and Biosystems Engineering, Universitas Udayana.">
 
-    <link rel="icon" type="image/png" href="icon/logo-era.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo-era.png">
 
-    <style>
-
-        /* =====================================================
-           GLOBAL
-        ===================================================== */
-
-        :root {
-            --green-dark: #0B3D20;
-            --green: #12612F;
-            --green-light: #00C800;
-            --dark: #071B10;
-            --text: #24352B;
-            --muted: #68756D;
-            --light: #F5F9F5;
-            --white: #FFFFFF;
-            --border: #DFE9E1;
-            --max-width: 1180px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                Inter,
-                Arial,
-                Helvetica,
-                sans-serif;
-            color: var(--text);
-            background: var(--white);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: min(
-                calc(100% - 40px),
-                var(--max-width)
-            );
-
-            margin: auto;
-        }
-
-        /* =====================================================
-           NAVIGATION
-        ===================================================== */
-
-        .navbar {
-
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            z-index: 1000;
-            background:
-                rgba(255,255,255,0.92);
-            backdrop-filter:
-                blur(15px);
-            border-bottom:
-                1px solid rgba(223,233,225,.8);
-        }
-
-        .nav-inner {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        /* LOGO */
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-logo {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
-        }
-
-        .brand-title {
-            color:
-                var(--green-dark);
-            font-size: 17px;
-            font-weight: 800;
-            letter-spacing: -.2px;
-        }
-
-        .brand-subtitle {
-            color: #737D76;
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 1.3px;
-            text-transform: uppercase;
-            margin-top: 3px;
-        }
-
-        /* MENU */
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            font-size: 13px;
-            font-weight: 700;
-            color: #435149;
-        }
-
-        .nav-menu a {
-            transition:
-                color .2s ease;
-        }
-
-        .nav-menu a:hover {
-            color:
-                var(--green-light);
-        }
-
-        .nav-contact {
-            background:
-                var(--green-dark);
-            color:
-                white !important;
-            padding:
-                11px 20px;
-            border-radius:
-                999px;
-        }
-
-        /* =====================================================
-           HERO
-        ===================================================== */
-
-        .hero {
-            min-height:
-                780px;
-            padding-top:
-                80px;
-            display:
-                flex;
-            align-items:
-                center;
-            position:
-                relative;
-            overflow:
-                hidden;
-            background:
-                radial-gradient(
-                    circle at 82% 25%,
-                    rgba(0,200,0,.12),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #F8FCF8 0%,
-                    #EDF7EF 55%,
-                    #FFFFFF 100%
-                );
-        }
-
-        /* Decorative circle */
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            right: -300px;
-            bottom: -300px;
-            border-radius: 50%;
-            border:
-                90px solid
-                rgba(11,61,32,.035);
-        }
-
-
-        .hero-grid {
-            display:
-                grid;
-            grid-template-columns:
-                1.05fr .95fr;
-            gap:
-                70px;
-            align-items:
-                center;
-            position:
-                relative;
-            z-index:
-                2;
-        }
-
-        /* HERO TEXT */
-        .hero-label {
-            display:
-                flex;
-            align-items:
-                center;
-            gap: 10px;
-            color:
-                var(--green);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 1.8px;
-            text-transform:
-                uppercase;
-            margin-bottom:
-                20px;
-        }
-
-        .hero-label::before {
-            content: "";
-            width: 34px;
-            height: 2px;
-            background:
-                var(--green-light);
-        }
-
-        .hero h1 {
-
-            color:
-                var(--dark);
-
-            font-size:
-                clamp(50px, 6vw, 80px);
-
-            line-height:
-                .98;
-
-            letter-spacing:
-                -4px;
-
-            font-weight:
-                900;
-
-            max-width:
-                720px;
-        }
-
-
-        .hero h1 span {
-
-            color:
-                var(--green);
-        }
-
-
-        .hero-description {
-
-            color:
-                var(--muted);
-
-            font-size:
-                17px;
-
-            max-width:
-                620px;
-
-            margin:
-                28px 0 25px;
-        }
-
-
-        /* INSTITUTION */
-
-        .institution {
-
-            border-left:
-                3px solid
-                var(--green-light);
-
-            padding-left:
-                14px;
-
-            margin-bottom:
-                30px;
-        }
-
-
-        .institution strong {
-
-            display:
-                block;
-
-            color:
-                var(--green-dark);
-
-            font-size:
-                13px;
-        }
-
-
-        .institution span {
-
-            color:
-                #707A73;
-
-            font-size:
-                12px;
-        }
-
-
-        /* BUTTONS */
-
-        .hero-buttons {
-
-            display:
-                flex;
-
-            gap:
-                12px;
-
-            flex-wrap:
-                wrap;
-        }
-
-
-        .btn {
-
-            display:
-                inline-flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            padding:
-                14px 22px;
-
-            border-radius:
-                999px;
-
-            font-size:
-                13px;
-
-            font-weight:
-                800;
-
-            transition:
-                .2s ease;
-        }
-
-
-        .btn-primary {
-
-            background:
-                var(--green-dark);
-
-            color:
-                white;
-
-            box-shadow:
-                0 12px 28px
-                rgba(11,61,32,.15);
-        }
-
-
-        .btn-primary:hover {
-
-            transform:
-                translateY(-2px);
-
-            background:
-                var(--green);
-        }
-
-
-        .btn-secondary {
-
-            background:
-                white;
-
-            border:
-                1px solid
-                var(--border);
-
-            color:
-                var(--green-dark);
-        }
-
-
-        .btn-secondary:hover {
-
-            border-color:
-                var(--green-light);
-        }
-
-
-
-        /* =====================================================
-           HERO LOGO / VISUAL
-        ===================================================== */
-
-        .hero-visual {
-
-            min-height:
-                500px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            position:
-                relative;
-        }
-
-
-        /* =====================================================
-   KETUA / HEAD OF RESEARCH GROUP
-===================================================== */
-
-.leader-profile {
-    position: relative;
-
-    width: 520px;
-    min-height: 570px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: flex-end;
-
-    text-align: center;
-}
-
-
-/* FOTO */
-
-.leader-photo {
-    width: 520px;
-    height: 520px;
-
-    object-fit: contain;
-
-    display: block;
-
-    position: relative;
-    z-index: 2;
-
-    /* membuat foto terasa menyatu dengan background */
-    filter:
-        drop-shadow(
-            0 25px 35px
-            rgba(6,43,22,.10)
-        );
-}
-
-
-/* AREA NAMA */
-
-.leader-caption {
-    position: relative;
-
-    z-index: 4;
-
-    margin-top: -35px;
-
-    padding: 15px 28px 0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(237,247,239,0),
-            rgba(237,247,239,.95) 35%
-        );
-
-    width: 100%;
-}
-
-
-/* JABATAN */
-
-.leader-role {
-    color: #0B3D20;
-
-    font-size: 10px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.8px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 6px;
-}
-
-
-/* NAMA */
-
-.leader-caption h3 {
-    color: #0B3D20;
-
-    font-size: 18px;
-
-    line-height: 1.25;
-
-    font-weight: 800;
-
-    margin: 0;
-}
-
-
-/* ORGANISASI */
-
-.leader-caption p {
-    color: #68756D;
-
-    font-size: 12px;
-
-    margin-top: 3px;
-}
-
-
-        /* Floating labels */
-
-        .floating-label {
-
-            position:
-                absolute;
-
-            background:
-                white;
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                15px;
-
-            padding:
-                10px 14px;
-
-            box-shadow:
-                0 12px 28px
-                rgba(6,43,22,.08);
-
-            font-size:
-                10px;
-
-            font-weight:
-                800;
-
-            color:
-                var(--green-dark);
-
-            z-index:
-                5;
-        }
-
-
-        .label-energy {
-
-            top:
-                50px;
-
-            right:
-                -10px;
-        }
-
-
-        .label-engineering {
-
-            bottom:
-                75px;
-
-            left:
-                -35px;
-        }
-
-
-        .label-smart {
-
-            bottom:
-                20px;
-
-            right:
-                55px;
-        }
-
-
-
-        /* =====================================================
-           ABOUT PREVIEW
-        ===================================================== */
-
-        .about {
-
-            padding:
-                100px 0;
-
-            background:
-                white;
-        }
-
-
-        .about-grid {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                .85fr 1.15fr;
-
-            gap:
-                80px;
-
-            align-items:
-                center;
-        }
-
-
-        .section-label {
-
-            color:
-                var(--green-light);
-
-            font-size:
-                11px;
-
-            font-weight:
-                800;
-
-            letter-spacing:
-                2px;
-
-            text-transform:
-                uppercase;
-
-            margin-bottom:
-                12px;
-        }
-
-
-        .about h2 {
-
-            color:
-                var(--dark);
-
-            font-size:
-                clamp(34px,4vw,50px);
-
-            line-height:
-                1.05;
-
-            letter-spacing:
-                -2px;
-        }
-
-
-        .about-text p {
-
-            color:
-                var(--muted);
-
-            font-size:
-                15px;
-
-            margin-bottom:
-                18px;
-        }
-
-
-        .about-text strong {
-
-            color:
-                var(--green-dark);
-        }
-
-
-
-
-        /* =====================================================
-           MEMBERS
-        ===================================================== */
-
-        .team { padding: 100px 0; background: var(--light); }
-        .team-heading { max-width: 650px; margin-bottom: 45px; }
-        .team-heading h2 { color: var(--dark); font-size: clamp(34px,4vw,50px); line-height: 1.05; letter-spacing: -2px; }
-        .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
-        .member-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: .25s ease; }
-        .member-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(6,43,22,.08); border-color: #C9DFCE; }
-        .member-photo { width: 100%; height: 320px; background: #F1F6F2; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .member-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
-        .member-info { padding: 20px 20px 23px; }
-        .member-role { color: var(--green-light); font-size: 9px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 7px; }
-        .member-info h3 { color: var(--green-dark); font-size: 16px; line-height: 1.3; margin-bottom: 5px; }
-        .member-info p { color: var(--muted); font-size: 11px; }
-
-/* =====================================================
-   RESEARCH ROADMAP IMAGE
-===================================================== */
-
-.roadmap-image {
-            width: 100%;
-            max-width: 100%;
-            margin: 0;
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 8px;
-            overflow: hidden;
-            box-shadow: 0 16px 40px rgba(6, 43, 22, .06);
-        }
-
-.roadmap-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 14px;
-}
-
-        /* =====================================================
-           RESEARCH PREVIEW
-        ===================================================== */
-
-        .research {
-
-            padding:
-                100px 0;
-
-            background:
-                var(--light);
-        }
-
-
-        .section-heading {
-
-            max-width:
-                650px;
-
-            margin-bottom:
-                45px;
-        }
-
-
-        .section-heading h2 {
-
-            color:
-                var(--dark);
-
-            font-size:
-                clamp(34px,4vw,50px);
-
-            line-height:
-                1.05;
-
-            letter-spacing:
-                -2px;
-        }
-
-
-        .section-heading p {
-
-            color:
-                var(--muted);
-
-            margin-top:
-                14px;
-        }
-
-
-        .research-grid {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(3,1fr);
-
-            gap:
-                18px;
-        }
-
-
-        .research-card {
-
-            background:
-                white;
-
-            border:
-                1px solid
-                var(--border);
-
-            border-radius:
-                22px;
-
-            padding:
-                30px;
-
-            min-height:
-                230px;
-
-            transition:
-                .25s ease;
-        }
-
-
-        .research-card:hover {
-
-            transform:
-                translateY(-5px);
-
-            box-shadow:
-                0 18px 40px
-                rgba(6,43,22,.08);
-
-            border-color:
-                #C9DFCE;
-        }
-
-
-        .research-number {
-
-            color:
-                #B5C4B9;
-
-            font-size:
-                11px;
-
-            font-weight:
-                800;
-
-            letter-spacing:
-                1px;
-        }
-
-
-        .research-card h3 {
-
-            color:
-                var(--green-dark);
-
-            font-size:
-                20px;
-
-            line-height:
-                1.2;
-
-            margin:
-                28px 0 12px;
-        }
-
-
-        .research-card p {
-
-            color:
-                var(--muted);
-
-            font-size:
-                13px;
-        }
-
-
-
-        /* =====================================================
-           CTA
-        ===================================================== */
-
-        .cta {
-
-            padding:
-                85px 0;
-
-            background:
-                var(--green-dark);
-
-            color:
-                white;
-        }
-
-
-        .cta-inner {
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                space-between;
-
-            gap:
-                40px;
-        }
-
-
-        .cta h2 {
-
-            font-size:
-                clamp(30px,4vw,46px);
-
-            line-height:
-                1.05;
-
-            letter-spacing:
-                -1.5px;
-
-            max-width:
-                650px;
-        }
-
-
-        .cta p {
-
-            color:
-                #C5D9CB;
-
-            font-size:
-                14px;
-
-            margin-top:
-                12px;
-
-            max-width:
-                580px;
-        }
-
-
-        .cta .btn {
-
-            background:
-                var(--green-light);
-
-            color:
-                var(--dark);
-
-            white-space:
-                nowrap;
-        }
-
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
-
-        footer {
-
-            background:
-                #06180D;
-
-            color:
-                #AAB9AF;
-
-            padding:
-                28px 0;
-
-            font-size:
-                11px;
-        }
-
-
-        .footer-inner {
-
-            display:
-                flex;
-
-            justify-content:
-                space-between;
-
-            align-items:
-                center;
-
-            gap:
-                30px;
-        }
-
-
-        .footer-brand {
-
-            color:
-                white;
-
-            font-weight:
-                800;
-
-            font-size:
-                14px;
-        }
-
-
-
-
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
-
-        /* ---------- Large Tablet / Small Laptop ---------- */
-
-        @media (max-width: 1100px) {
-
-            .hero-grid {
-                grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
-                gap: 35px;
-            }
-
-            .leader-profile {
-                width: min(100%, 460px);
-                min-height: auto;
-            }
-
-            .leader-photo {
-                width: 100%;
-                height: auto;
-                max-height: 500px;
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-
-        /* ---------- Tablet ---------- */
-
-        @media (max-width: 900px) {
-
-            .navbar {
-                height: 72px;
-            }
-
-            .nav-menu {
-                display: none;
-            }
-
-            .brand-logo {
-                width: 46px;
-                height: 46px;
-            }
-
-            .brand-title {
-                font-size: 15px;
-            }
-
-            .brand-subtitle {
-                font-size: 8px;
-                letter-spacing: 1px;
-            }
-
-            /* HERO */
-
-            .hero {
-                min-height: auto;
-                padding: 125px 0 80px;
-            }
-
-            .hero-grid {
-                display: grid;
-                grid-template-columns: minmax(0, 1fr);
-                gap: 45px;
-                width: 100%;
-                min-width: 0;
-            }
-
-            .hero-grid > * {
-                width: 100%;
-                min-width: 0;
-                max-width: 100%;
-            }
-
-            .hero h1 {
-                width: 100%;
-                max-width: 760px;
-                font-size: clamp(46px, 8vw, 68px);
-            }
-
-            .hero-description {
-                width: 100%;
-                max-width: 720px;
-            }
-
-            .hero-visual {
-                width: 100%;
-                min-height: auto;
-                min-width: 0;
-                overflow: hidden;
-            }
-
-            .leader-profile {
-                width: min(100%, 500px);
-                min-width: 0;
-                margin: 0 auto;
-            }
-
-            .leader-photo {
-                width: 100%;
-                height: auto;
-                max-width: 100%;
-            }
-
-            /* ABOUT */
-
-            .about-grid {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 35px;
-            }
-
-            /* MEMBERS */
-
-            .team-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .member-photo {
-                height: 340px;
-            }
-
-            /* ROADMAP */
-
-            .roadmap-image {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            /* CTA */
-
-            .cta-inner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-
-        /* ---------- Mobile ---------- */
-
-        @media (max-width: 600px) {
-
-            .container {
-                width: calc(100% - 28px);
-                max-width: calc(100% - 28px);
-            }
-
-            .navbar {
-                height: 68px;
-            }
-
-            .brand {
-                gap: 9px;
-                min-width: 0;
-                max-width: 100%;
-            }
-
-            .brand-logo {
-                width: 42px;
-                height: 42px;
-                flex: 0 0 42px;
-            }
-
-            .brand-title {
-                font-size: 13px;
-                line-height: 1.15;
-                white-space: nowrap;
-            }
-
-            .brand-subtitle {
-                font-size: 6.5px;
-                letter-spacing: .8px;
-                white-space: nowrap;
-            }
-
-            /* HERO */
-
-            .hero {
-                width: 100%;
-                max-width: 100%;
-                min-height: auto;
-                padding: 105px 0 65px;
-                overflow: hidden;
-            }
-
-            .hero-grid {
-                width: 100%;
-                max-width: 100%;
-                min-width: 0;
-                grid-template-columns: minmax(0, 1fr);
-                gap: 35px;
-            }
-
-            .hero-grid > div {
-                width: 100%;
-                max-width: 100%;
-                min-width: 0;
-            }
-
-            .hero-label {
-                font-size: 8.5px;
-                letter-spacing: 1.15px;
-                gap: 7px;
-                margin-bottom: 16px;
-                flex-wrap: wrap;
-            }
-
-            .hero-label::before {
-                width: 24px;
-                flex: 0 0 24px;
-            }
-
-            .hero h1 {
-                width: 100%;
-                max-width: 100%;
-                font-size: clamp(38px, 11.5vw, 52px);
-                line-height: .98;
-                letter-spacing: -2.2px;
-                overflow-wrap: normal;
-                word-break: normal;
-            }
-
-            .hero-description {
-                width: 100%;
-                max-width: 100%;
-                font-size: 14px;
-                line-height: 1.65;
-                margin: 22px 0;
-                overflow-wrap: break-word;
-            }
-
-            .institution {
-                width: 100%;
-                max-width: 100%;
-                padding-left: 11px;
-                margin-bottom: 25px;
-            }
-
-            .institution span {
-                display: block;
-                width: 100%;
-                max-width: 100%;
-                font-size: 11px;
-                line-height: 1.55;
-                white-space: normal;
-                overflow-wrap: break-word;
-            }
-
-            .hero-buttons {
-                width: 100%;
-                max-width: 100%;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            /* HERO LEADER PHOTO */
-
-            .hero-visual {
-                width: 100%;
-                max-width: 100%;
-                min-width: 0;
-                min-height: auto;
-                overflow: hidden;
-            }
-
-            .leader-profile {
-                width: 100%;
-                max-width: 390px;
-                min-width: 0;
-                margin: 0 auto;
-            }
-
-            .leader-photo {
-                width: 100%;
-                max-width: 100%;
-                height: auto;
-                object-fit: contain;
-            }
-
-            .leader-caption {
-                margin-top: -28px;
-                padding: 15px 15px 0;
-            }
-
-            .leader-role {
-                font-size: 8px;
-                letter-spacing: 1.4px;
-            }
-
-            .leader-caption h3 {
-                font-size: 16px;
-            }
-
-            .leader-caption p {
-                font-size: 11px;
-            }
-
-            /* SECTIONS */
-
-            .about,
-            .team,
-            .research-roadmap {
-                padding: 70px 0;
-            }
-
-            .about-grid {
-                gap: 28px;
-            }
-
-            .section-label {
-                font-size: 9px;
-                letter-spacing: 1.7px;
-            }
-
-            .about h2,
-            .team-heading h2,
-            .section-heading h2 {
-                font-size: clamp(34px, 10vw, 44px);
-                line-height: 1.05;
-                letter-spacing: -1.8px;
-            }
-
-            .about-text p {
-                font-size: 14px;
-                line-height: 1.7;
-            }
-
-            /* MEMBERS */
-
-            .team-heading {
-                margin-bottom: 30px;
-            }
-
-            .team-grid {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 15px;
-            }
-
-            .member-card {
-                width: 100%;
-                min-width: 0;
-            }
-
-            .member-photo {
-                height: 350px;
-            }
-
-            .member-info {
-                padding: 18px 18px 21px;
-            }
-
-            .member-info h3 {
-                font-size: 15px;
-            }
-
-            /* ROADMAP */
-
-            .research-roadmap .section-heading {
-                margin-bottom: 28px;
-            }
-
-            .research-roadmap .section-heading p {
-                font-size: 13px;
-                line-height: 1.65;
-            }
-
-            .roadmap-image {
-                width: 100%;
-                max-width: 100%;
-                padding: 4px;
-                border-radius: 14px;
-                overflow: hidden;
-            }
-
-            .roadmap-image img {
-                width: 100%;
-                max-width: 100%;
-                height: auto;
-                display: block;
-                border-radius: 10px;
-            }
-
-            /* CTA */
-
-            .cta {
-                padding: 65px 0;
-            }
-
-            .cta h2 {
-                font-size: clamp(30px, 9vw, 40px);
-            }
-
-            .cta p {
-                font-size: 13px;
-            }
-
-            .cta .btn {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            /* FOOTER */
-
-            .footer-inner {
-                display: block;
-                text-align: center;
-            }
-
-            footer small {
-                display: block;
-                line-height: 1.6;
-            }
-        }
-
-
-        /* ---------- Very Small Phones ---------- */
-
-        @media (max-width: 380px) {
-
-            .container {
-                width: calc(100% - 24px);
-                max-width: calc(100% - 24px);
-            }
-
-            .brand-title {
-                font-size: 12px;
-            }
-
-            .brand-subtitle {
-                font-size: 6px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-                letter-spacing: -1.8px;
-            }
-
-            .hero-description {
-                font-size: 13.5px;
-            }
-
-            .leader-profile {
-                max-width: 330px;
-            }
-
-            .member-photo {
-                height: 310px;
-            }
-        }
-
-
-        /* ---------- Global Mobile Overflow Protection ---------- */
-
-        html,
-        body {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-
-        .hero-grid,
-        .hero-grid > *,
-        .about-grid,
-        .about-grid > *,
-        .team-grid,
-        .member-card,
-        .hero-visual,
-        .leader-profile,
-        .roadmap-image {
-            min-width: 0;
-        }
-
-    </style>
-
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
+    <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+    <header class="navbar">
 
-<header class="navbar">
+        <div class="container nav-inner">
 
-    <div class="container nav-inner">
+            <!-- LOGO -->
+            <a href="#home" class="brand">
+
+                <img
+                    src="assets/logo-era.png"
+                    alt="AgriField Technology"
+                    class="brand-logo"
+                >
+
+                <div>
+                    <div class="brand-title">
+                        AgriField Technology
+                    </div>
+
+                    <div class="brand-subtitle">
+                        Research Group · TPB Unud
+                    </div>
+                </div>
+
+            </a>
 
 
-        <a href="#home" class="brand">
+            <!-- MENU -->
+            <nav class="nav-menu">
 
-            <img
-                src="icon/logo-era.png"
-                alt="AgriField Technology"
-                class="brand-logo"
-            >
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#research">
+                    Research
+                </a>
+
+                <a href="#contact" class="nav-contact">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ===================================================== -->
+
+    <main id="home">
+
+
+        <!-- =================================================
+             HERO
+        ================================================= -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+
+                <!-- LEFT : HERO TEXT -->
+
+                <div>
+
+                    <div class="hero-label">
+                        Energy · Technology · Mechanisation · Agricultural Engineering
+                    </div>
+
+
+                    <h1>
+                        Engineering the
+                        <span>future</span>
+                        of agriculture.
+                    </h1>
+
+
+                    <p class="hero-description">
+                        AgriField Technology Research Group develops innovative engineering
+                        and digital solutions for smart and sustainable agricultural
+                        biosystems. Our research encompasses biosystems engineering,
+                        land and environmental management, composting, agricultural
+                        machinery, artificial intelligence, machine learning,
+                        image processing, robotic, and remote sensing.
+                    </p>
+
+
+                    <!-- INSTITUTION -->
+
+                    <div class="institution">
+
+                        <span>
+                            Agricultural and Biosystem Engineering Program Study
+                            · Universitas Udayana
+                        </span>
+
+                    </div>
+
+
+                    <!-- BUTTONS -->
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#research"
+                            class="btn btn-primary"
+                        >
+                            Explore Research →
+                        </a>
+
+
+                        <a
+                            href="#about"
+                            class="btn btn-secondary"
+                        >
+                            Discover AgriField
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT : HEAD OF RESEARCH GROUP -->
+
+                <div class="hero-visual">
+
+                    <div class="leader-profile">
+
+                        <img
+                            src="assets/lead-no.png"
+                            alt="Prof. Dr. Ir. Yohanes Setiyo, M.P."
+                            class="leader-photo"
+                        >
+
+
+                        <div class="leader-caption">
+
+                            <div class="leader-role">
+                                HEAD OF RESEARCH GROUP
+                            </div>
+
+                            <h3>
+                                Prof. Dr. Ir. Yohanes Setiyo, M.P.
+                            </h3>
+
+                            <p>
+                                AgriField Technology
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ABOUT PREVIEW
+        ================================================= -->
+
+        <section id="about" class="about">
+
+            <div class="container about-grid">
+
+
+                <!-- TITLE -->
+
+                <div>
+
+                    <div class="section-label">
+                        ABOUT AGRIFIELD
+                    </div>
+
+                    <h2>
+                        Engineering technology
+                        for better agriculture.
+                    </h2>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="about-text">
+
+                    <p>
+                        <strong>AgriField Technology</strong>
+                        is a research group in the
+                        <strong>Energy and Agricultural Machinery
+                        Engineering</strong> field at the
+                        <strong>Program Studi Teknik Pertanian dan
+                        Biosistem, Universitas Udayana.</strong>
+                    </p>
+
+                    <p>
+                        We develop practical technologies through
+                        agricultural engineering, energy systems,
+                        machinery, smart agriculture, AI, sensing,
+                        and data-driven approaches.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             OUR MEMBERS
+        ================================================= -->
+
+        <section id="team" class="team">
+
+            <div class="container">
+
+
+                <!-- SECTION HEADING -->
+
+                <div class="team-heading">
+
+                    <div class="section-label">
+                        OUR MEMBERS
+                    </div>
+
+                    <h2>
+                        Meet the people<br>
+                        behind AgriField.
+                    </h2>
+
+                </div>
+
+
+                <!-- TEAM GRID -->
+
+                <div class="team-grid">
+
+
+                    <!-- MEMBER 01 -->
+
+                    <div class="member-card">
+
+                        <div class="member-photo">
+
+                            <img
+                                src="assets/lead.png"
+                                alt="Prof. Dr. Ir. Yohanes Setiyo, M.P."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MEMBER 02 -->
+
+                    <div class="member-card">
+
+                        <div class="member-photo">
+
+                            <img
+                                src="assets/member-1.png"
+                                alt="Nama Member"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MEMBER 03 -->
+
+                    <div class="member-card">
+
+                        <div class="member-photo">
+
+                            <img
+                                src="assets/member-2.png"
+                                alt="Nama Member"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MEMBER 04 -->
+
+                    <div class="member-card">
+
+                        <div class="member-photo">
+
+                            <img
+                                src="assets/member-4.png"
+                                alt="Nama Member"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESEARCH ROADMAP
+        ================================================= -->
+
+        <section id="research" class="research-roadmap">
+
+            <div class="container">
+
+
+                <!-- SECTION HEADING -->
+
+                <div class="section-heading">
+
+                    <div class="section-label">
+                        RESEARCH FOCUS
+                    </div>
+
+
+                    <h2>
+                        Where agricultural engineering
+                        meets emerging technology.
+                    </h2>
+
+
+                    <p>
+                        AgriField Technology develops research progressively,
+                        connecting existing research outputs with applied technology,
+                        smart monitoring, digital integration, and long-term
+                        agricultural innovation.
+                    </p>
+
+                </div>
+
+
+                <!-- ROADMAP IMAGE -->
+
+                <div class="roadmap-image">
+
+                    <img
+                        src="assets/roadmap.png"
+                        alt="AgriField Technology Research Roadmap"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CTA
+        ================================================= -->
+
+        <section id="contact" class="cta">
+
+            <div class="container cta-inner">
+
+
+                <div>
+
+                    <h2>
+                        Turning agricultural challenges
+                        into engineering solutions.
+                    </h2>
+
+
+                    <p>
+                        We welcome research collaboration,
+                        technology development, field trials,
+                        and student projects.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="https://www.instagram.com/agrifield.tech?stkn=cG03NTJyeWwxcHR6"
+                    class="btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Start a Collaboration →
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
 
             <div>
 
-                <div class="brand-title">
+                <div class="footer-brand">
                     AgriField Technology
                 </div>
 
-                <div class="brand-subtitle">
-                    Research Group · TPB Unud
-                </div>
 
-            </div>
-
-        </a>
-
-
-        <nav class="nav-menu">
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#research">
-                Research
-            </a>
-
-            <a href="#contact" class="nav-contact">
-                Contact
-            </a>
-
-        </nav>
-
-
-    </div>
-
-</header>
-
-
-
-<!-- =====================================================
-     HOME
-===================================================== -->
-
-<main id="home">
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="container hero-grid">
-
-
-            <!-- LEFT -->
-
-            <div>
-
-                <div class="hero-label">
-
-                    Energy · Technology · Mechanisation · Agricultural Engineering
-
-                </div>
-
-
-                <h1>
-
-                    Engineering the
-                    <span>future</span>
-                    of agriculture.
-
-                </h1>
-
-
-                <p class="hero-description">
-
-                   AgriField Technology Research Group develops innovative engineering and digital solutions for smart 
-                   and sustainable agricultural biosystems. Our research encompasses biosystems engineering, land and 
-                   environmental management, composting, agricultural machinery, artificial intelligence, machine learning, 
-                   image processing, robotic, and remote sensing.
-
-                </p>
-
-
-                <div class="institution">
-
-                    <span>
-
-                        Agricultural and Biosystem Engineering Program Study
-                        · Universitas Udayana
-
-                    </span>
-
-                </div>
-
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#research"
-                        class="btn btn-primary"
-                    >
-
-                        Explore Research →
-
-                    </a>
-
-
-                    <a
-                        href="#about"
-                        class="btn btn-secondary"
-                    >
-
-                        Discover AgriField
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- RIGHT / HEAD OF RESEARCH GROUP -->
-
-           <div class="hero-visual">
-
-    <div class="leader-profile">
-
-        <img
-            src="icon/lead-no.png"
-            alt="Prof. Dr. Ir. Yohanes Setiyo, M.P."
-            class="leader-photo"
-        >
-
-        <div class="leader-caption">
-
-            <div class="leader-role">
-                HEAD OF RESEARCH GROUP
-            </div>
-
-            <h3>
-                Prof. Dr. Ir. Yohanes Setiyo, M.P.
-            </h3>
-
-            <p>
-                AgriField Technology
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-    </section>
-
-
-<!-- =================================================
-     ABOUT PREVIEW
-================================================= -->
-
-<section id="about" class="about">
-
-    <div class="container about-grid">
-
-        <div>
-
-            <div class="section-label">
-                ABOUT AGRIFIELD
-            </div>
-
-            <h2>
-                Engineering technology
-                for better agriculture.
-            </h2>
-
-        </div>
-
-
-        <div class="about-text">
-
-            <p>
-
-                <strong>AgriField Technology</strong>
-                is a research group in the
-                <strong>Energy and Agricultural Machinery
-                Engineering</strong> field at the
-                <strong>Program Studi Teknik Pertanian dan
-                Biosistem, Universitas Udayana.</strong>
-
-            </p>
-
-            <p>
-
-                We develop practical technologies through
-                agricultural engineering, energy systems,
-                machinery, smart agriculture, AI, sensing,
-                and data-driven approaches.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =================================================
-     OUR MEMBERS
-================================================= -->
-
-<section id="team" class="team">
-
-    <div class="container">
-
-
-        <div class="team-heading">
-
-            <div class="section-label">
-                OUR MEMBERS
-            </div>
-
-            <h2>
-                Meet the people<br>
-                behind AgriField.
-            </h2>
-
-        </div>
-
-
-        <div class="team-grid">
-
-
-            <!-- MEMBER 01 -->
-
-            <div class="member-card">
-
-                <div class="member-photo">
-
-                    <img
-                        src="icon/lead.png"
-                        alt="Prof. Dr. Ir. Yohanes Setiyo, M.P."
-                    >
-
-                </div>
-
-            </div>
-
-
-
-            <!-- MEMBER 02 -->
-
-            <div class="member-card">
-
-                <div class="member-photo">
-
-                    <img
-                        src="icon/member-1.png"
-                        alt="Nama Member"
-                    >
-
-                </div>
-
-            </div>
-
-
-
-            <!-- MEMBER 03 -->
-
-            <div class="member-card">
-
-                <div class="member-photo">
-
-                    <img
-                        src="icon/member-2.png"
-                        alt="Nama Member"
-                    >
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- MEMBER 04 -->
-
-            <div class="member-card">
-
-                <div class="member-photo">
-
-                    <img
-                        src="icon/member-4.png"
-                        alt="Nama Member"
-                    >
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-    <!-- =================================================
-         RESEARCH PREVIEW
-    ================================================= -->
-
-    <section id="research" class="research-roadmap">
-
-        <div class="container">
-
-
-            <div class="section-heading">
-
-                <div class="section-label">
-
-                    RESEARCH FOCUS
-
-                </div>
-
-
-                <h2>
-
-                    Where agricultural engineering
-                    meets emerging technology.
-
-                </h2>
-
-
-                <p>
-                AgriField Technology develops research progressively,
-                connecting existing research outputs with applied technology,
-                smart monitoring, digital integration, and long-term
-                agricultural innovation.
-                </p>
-
-             </div>
-
-
-        <div class="roadmap-image">
-
-            <img
-                src="icon/roadmap.png"
-                alt="AgriField Technology Research Roadmap"
-            >
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-    <!-- =================================================
-         CTA
-    ================================================= -->
-
-    <section id="contact" class="cta">
-
-        <div class="container cta-inner">
-
-
-            <div>
-
-                <h2>
-
-                    Turning agricultural challenges
-                    into engineering solutions.
-
-                </h2>
-
-
-                <p>
-
-                    We welcome research collaboration,
-                    technology development, field trials,
-                    and student projects.
-
-                </p>
-
-            </div>
-
-
-            <a
-                href="https://www.instagram.com/agrifield.tech?stkn=cG03NTJyeWwxcHR6"
-                class="btn"
-            >
-
-                Start a Collaboration →
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <div class="container footer-inner">
-
-
-        <div>
-
-            <div class="footer-brand">
-
-                AgriField Technology
+                <small>
+                    KBK Energy dan Rekayasa Alat ·
+                    Program Studi Teknik Pertanian dan Biosistem ·
+                    Universitas Udayana
+                </small>
 
             </div>
 
 
             <small>
-
-                KBK Energy dan Rekayasa Alat ·
-                Program Studi Teknik Pertanian dan Biosistem ·
-                Universitas Udayana
-
+                © 2026 AgriField Technology
             </small>
 
         </div>
 
-
-        <small>
-
-            © 2026 AgriField Technology
-
-        </small>
-
-
-    </div>
-
-</footer>
+    </footer>
 
 
 </body>
 </html>
+```
