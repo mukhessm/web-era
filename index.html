@@ -9,7 +9,7 @@
     <meta name="description"
           content="AgriField Technology Research Group - Energy and Agricultural Machinery Engineering, Agricultural and Biosystems Engineering, Universitas Udayana.">
 
-    <link rel="icon" type="image/png" href="icon\logo-era.png">
+    <link rel="icon" type="image/png" href="icon/logo-era.png">
 
     <style>
 
@@ -727,16 +727,16 @@
 ===================================================== */
 
 .roadmap-image {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    background: #FFFFFF;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 8px;
-    overflow: hidden;
-    box-shadow: 0 16px 40px rgba(6, 43, 22, .06);
-}
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 8px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(6, 43, 22, .06);
+        }
 
 .roadmap-image img {
     width: 100%;
@@ -1021,180 +1021,290 @@
            RESPONSIVE
         ===================================================== */
 
-        @media(max-width: 900px) {
+        @media (max-width: 1100px) {
+            .hero-grid {
+                grid-template-columns: 1fr 0.9fr;
+                gap: 35px;
+            }
+
+            .leader-profile {
+                width: min(100%, 460px);
+                min-height: auto;
+            }
+
+            .leader-photo {
+                width: 100%;
+                height: auto;
+                max-height: 500px;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                height: 72px;
+            }
 
             .nav-menu {
                 display: none;
             }
 
+            .brand-logo {
+                width: 46px;
+                height: 46px;
+            }
+
+            .brand-title {
+                font-size: 15px;
+            }
+
+            .brand-subtitle {
+                font-size: 8px;
+            }
 
             .hero {
-                padding:
-                    130px 0 80px;
+                min-height: auto;
+                padding: 125px 0 80px;
             }
-
 
             .hero-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    40px;
+                grid-template-columns: 1fr;
+                gap: 45px;
             }
 
+            .hero h1 {
+                max-width: 760px;
+                font-size: clamp(46px, 8vw, 68px);
+            }
+
+            .hero-description {
+                max-width: 720px;
+            }
 
             .hero-visual {
-
-                min-height:
-                    400px;
+                min-height: auto;
+                width: 100%;
             }
 
+            .leader-profile {
+                width: min(100%, 500px);
+                margin: 0 auto;
+            }
+
+            .leader-photo {
+                width: 100%;
+                height: auto;
+                max-height: none;
+            }
 
             .about-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    40px;
-            }
-
-
-            .research-grid {
-
-                grid-template-columns:
-                    1fr 1fr;
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
 
             .team-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
+            .member-photo {
+                height: 340px;
+            }
+
+            .roadmap-image {
+                width: 100%;
+            }
 
             .cta-inner {
-
-                display:
-                    block;
-            }
-
-
-            .cta .btn {
-
-                margin-top:
-                    25px;
+                flex-direction: column;
+                align-items: flex-start;
             }
         }
 
-
-        @media(max-width: 600px) {
-
+        @media (max-width: 600px) {
             .container {
-
-                width:
-                    calc(100% - 28px);
+                width: calc(100% - 28px);
             }
-
 
             .navbar {
-
-                height:
-                    70px;
+                height: 68px;
             }
 
+            .brand {
+                gap: 9px;
+                min-width: 0;
+            }
 
             .brand-logo {
-
-                width:
-                    45px;
-
-                height:
-                    45px;
+                width: 42px;
+                height: 42px;
+                flex: 0 0 42px;
             }
-
 
             .brand-title {
-
-                font-size:
-                    14px;
+                font-size: 13px;
+                line-height: 1.15;
+                white-space: nowrap;
             }
-
 
             .brand-subtitle {
-
-                font-size:
-                    7px;
+                font-size: 6.5px;
+                white-space: nowrap;
             }
-
 
             .hero {
-
-                padding:
-                    110px 0 70px;
+                padding: 105px 0 65px;
             }
 
+            .hero-label {
+                font-size: 8.5px;
+                letter-spacing: 1.15px;
+                flex-wrap: wrap;
+            }
 
             .hero h1 {
-
-                font-size:
-                    49px;
-
-                letter-spacing:
-                    -3px;
+                font-size: clamp(40px, 12vw, 54px);
+                line-height: 1;
+                letter-spacing: -2.8px;
             }
-
 
             .hero-description {
-
-                font-size:
-                    15px;
-            }
-.label-engineering {
-
-                left:
-                    -10px;
+                font-size: 14px;
+                line-height: 1.65;
+                margin: 22px 0;
             }
 
-
-            .label-energy {
-
-                right:
-                    -5px;
+            .institution span {
+                font-size: 11px;
             }
 
+            .hero-buttons {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+            }
 
-            .research-grid {
+            .hero-buttons .btn {
+                width: 100%;
+            }
 
-                grid-template-columns:
-                    1fr;
+            .hero-visual {
+                width: 100%;
+                min-height: auto;
+            }
+
+            .leader-profile {
+                width: 100%;
+                max-width: 390px;
+                margin: 0 auto;
+            }
+
+            .leader-photo {
+                width: 100%;
+                height: auto;
+            }
+
+            .leader-caption {
+                margin-top: -28px;
+                padding: 15px 15px 0;
+            }
+
+            .leader-role {
+                font-size: 8px;
+            }
+
+            .leader-caption h3 {
+                font-size: 16px;
+            }
+
+            .about,
+            .team,
+            .research-roadmap {
+                padding: 70px 0;
+            }
+
+            .about-grid {
+                gap: 28px;
+            }
+
+            .about h2,
+            .team-heading h2,
+            .section-heading h2 {
+                font-size: clamp(34px, 10vw, 44px);
+                line-height: 1.05;
+                letter-spacing: -1.8px;
+            }
+
+            .about-text p {
+                font-size: 14px;
+                line-height: 1.7;
+            }
+
+            .team-heading {
+                margin-bottom: 30px;
             }
 
             .team-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
             }
 
             .member-photo {
-                height: 330px;
+                height: 350px;
             }
 
-
-            .about,
-            .research {
-
-                padding:
-                    75px 0;
+            .roadmap-image {
+                width: 100%;
+                padding: 4px;
+                border-radius: 14px;
             }
 
+            .roadmap-image img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            .cta {
+                padding: 65px 0;
+            }
+
+            .cta h2 {
+                font-size: clamp(30px, 9vw, 40px);
+            }
+
+            .cta .btn {
+                width: 100%;
+            }
 
             .footer-inner {
+                display: block;
+                text-align: center;
+            }
+        }
 
-                display:
-                    block;
-
-                text-align:
-                    center;
+        @media (max-width: 380px) {
+            .container {
+                width: calc(100% - 24px);
             }
 
+            .brand-title {
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+            }
+
+            .leader-profile {
+                max-width: 330px;
+            }
+
+            .member-photo {
+                height: 310px;
+            }
         }
 
     </style>
@@ -1217,7 +1327,7 @@
         <a href="#home" class="brand">
 
             <img
-                src="icon\logo-era.png"
+                src="icon/logo-era.png"
                 alt="AgriField Technology"
                 class="brand-logo"
             >
@@ -1354,7 +1464,7 @@
     <div class="leader-profile">
 
         <img
-            src="icon\lead-no.png"
+            src="icon/lead-no.png"
             alt="Prof. Dr. Ir. Yohanes Setiyo, M.P."
             class="leader-photo"
         >
@@ -1468,7 +1578,7 @@
                 <div class="member-photo">
 
                     <img
-                        src="icon\lead.png"
+                        src="icon/lead.png"
                         alt="Prof. Dr. Ir. Yohanes Setiyo, M.P."
                     >
 
@@ -1485,7 +1595,7 @@
                 <div class="member-photo">
 
                     <img
-                        src="icon\member-1.png"
+                        src="icon/member-1.png"
                         alt="Nama Member"
                     >
 
@@ -1502,7 +1612,7 @@
                 <div class="member-photo">
 
                     <img
-                        src="icon\member-2.png"
+                        src="icon/member-2.png"
                         alt="Nama Member"
                     >
 
@@ -1520,7 +1630,7 @@
                 <div class="member-photo">
 
                     <img
-                        src="icon\member-4.png"
+                        src="icon/member-4.png"
                         alt="Nama Member"
                     >
 
@@ -1541,7 +1651,7 @@
          RESEARCH PREVIEW
     ================================================= -->
 
-    <section id="research" class="research">
+    <section id="research" class="research-roadmap">
 
         <div class="container">
 
@@ -1576,7 +1686,7 @@
         <div class="roadmap-image">
 
             <img
-                src="icon\roadmap.png"
+                src="icon/roadmap.png"
                 alt="AgriField Technology Research Roadmap"
             >
 
